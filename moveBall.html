@@ -1,0 +1,116 @@
+<div id="ball" style="
+  z-index:5;
+  position:absolute;
+  left:0px;
+  top:0px;
+  width:50px;
+  height:50px;
+  border-radius:50%;
+  background:pink"></div>
+
+  <div id="ball2" style="
+  z-index:5;
+  position:absolute;
+  left:0px;
+  top:0px;
+  width:40px;
+  height:40px;
+  border-radius:50%;
+  background:purple"></div>
+
+<script>
+
+var velocity = 1;
+var position = 0;
+var ball = document.getElementById('ball');
+var time = 1;
+var positionmin = 0;
+var positionmax = 500;
+var reverse_x = true;
+
+var velocityy = 1;
+var positiony = 0;
+var positionymin =  0;
+var positionymax = 300;
+var reverse_y = true;
+
+var velocity2 = 3;
+var position2 = 0;
+var ball2 = document.getElementById('ball2');
+var time2 = 1;
+var positionmin2 = 0;
+var positionmax2 = 500;
+var reverse_x2 = true;
+
+var velocityy2 = 1;
+var positiony2 = 0;
+var positionymin2 =  0;
+var positionymax2 = 300;
+var reverse_y2 = true;
+
+// YOUR CODE 
+// ----------------
+function myFunction() {
+  if(reverse_x){
+position = position + velocity;
+ball.style.left = position + 'px';
+}
+else{
+  position = position - velocity;
+  ball.style.left = position + 'px';
+}
+if(reverse_y){
+positiony = positiony + velocityy;
+ball.style.top = positiony + 'px';
+}
+else{
+  positiony = positiony - velocityy;
+  ball.style.top = positiony + 'px';
+}
+if (
+  position > positionmax ||
+  position === positionmin
+) {
+  reverse_x = !reverse_x;
+}
+if (
+  positiony > positionymax ||
+  positiony === positionymin
+) {
+  reverse_y = !reverse_y;
+}
+}
+
+function myFunction2() {
+if(reverse_x2){
+position2 = position2 + velocity2;
+ball2.style.left = position2 + 'px';
+}
+else{
+  position2 = position2 - velocity2;
+  ball2.style.left = position2 + 'px';
+}
+if(reverse_y2){
+positiony2 = positiony2 + velocityy2;
+ball2.style.top = positiony2 + 'px';
+}
+else{
+  positiony2 = positiony2 - velocityy2;
+  ball2.style.top = positiony2 + 'px';
+}
+if (
+  position2 > positionmax2 ||
+  position2 === positionmin2
+) {
+  reverse_x2 = !reverse_x2;
+}
+if (
+  positiony2 > positionymax2 ||
+  positiony2 === positionymin2
+) {
+  reverse_y2 = !reverse_y2;
+}
+}
+setInterval(myFunction,time);
+setInterval(myFunction2,time);
+</script>
